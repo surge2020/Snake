@@ -5,6 +5,7 @@ Snake::Snake(SDL_Renderer* renderer)
     this->renderer = renderer;
     direction = 'r';
     head = new Head(renderer);
+    body = new Body(renderer, head);
 }
 
 void Snake::setDirection(char direction)
@@ -25,10 +26,12 @@ void Snake::setDirection(char direction)
 
 void Snake::update()
 {
+    body->update();
     head->update(direction);
 }
 
 void Snake::render()
 {
     head->render();
+    body->render();
 }

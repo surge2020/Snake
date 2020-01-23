@@ -3,6 +3,7 @@
 
 #include <SDL2/SDL.h>
 #include "snake.h"
+#include "collision.h"
 
 class Game {
 public:
@@ -19,6 +20,7 @@ private:
     SDL_Renderer* renderer;
     bool running;
     Snake* snake;
+    Collision* collision;
 };
 
 #endif

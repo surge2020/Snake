@@ -10,6 +10,7 @@ Game::Game()
     renderer = SDL_CreateRenderer(window, -1, 0);
     running = true;
     snake = new Snake(renderer);
+    collision = new Collision(snake);
 }
 
 bool Game::getRunning()

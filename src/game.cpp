@@ -49,6 +49,9 @@ void Game::keyDown(SDL_Event* event)
     case SDLK_RIGHT:
         snake->setDirection('r');
         break;
+    case SDLK_RETURN:
+        snake->eat();
+        break;
     default:
         break;
     }

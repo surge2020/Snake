@@ -10,7 +10,8 @@ public:
     Snake(SDL_Renderer* renderer);
     Head* head;
     Body* body;
-    void setDirection(char direction);  
+    void setDirection(char direction);
+    void eat();  
     void update();
     void render();
 private:

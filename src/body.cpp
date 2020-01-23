@@ -8,8 +8,15 @@ Body::Body(SDL_Renderer* renderer, Head* head)
     parts.push_back(part);
 }
 
-void Body::update()
+void Body::generate()
 {
+    Part part(renderer, head->headRect.x, head->headRect.y);
+    parts.insert(parts.begin(), part);
+}
+
+void Body::update()
+{  
+    std::rotate(parts.begin(), parts.begin() + 1, parts.end());
     parts.back().partRect = head->headRect;
 }
 

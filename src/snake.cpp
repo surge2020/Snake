@@ -24,10 +24,15 @@ void Snake::setDirection(char direction)
     }
 }
 
-void Snake::update()
+void Snake::eat()
 {
+    body->generate();
+}
+
+void Snake::update()
+{ 
     body->update();
-    head->update(direction);
+    head->update(direction);  
 }
 
 void Snake::render()

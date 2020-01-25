@@ -3,6 +3,7 @@
 
 #include <SDL2/SDL.h>
 #include "snake.h"
+#include "food.h"
 #include "collision.h"
 
 class Game {
@@ -20,6 +21,7 @@ private:
     SDL_Renderer* renderer;
     bool running;
     Snake* snake;
+    Food* food;
     Collision* collision;
 };
 

@@ -3,7 +3,7 @@
 Head::Head(SDL_Renderer* renderer)
 {
     this->renderer = renderer;
-    headRect = {310, 230, 20, 20};
+    headRect = {100, 100, 20, 20};
 }
 
 void Head::update(char direction)

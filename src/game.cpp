@@ -10,7 +10,8 @@ Game::Game()
     renderer = SDL_CreateRenderer(window, -1, 0);
     running = true;
     snake = new Snake(renderer);
-    collision = new Collision(snake);
+    food = new Food(renderer, snake);
+    collision = new Collision(snake, food);
 }
 
 bool Game::getRunning()
@@ -60,7 +61,10 @@ void Game::keyDown(SDL_Event* event)
 
 void Game::logic()
 {
-    
+    if (collision->headWindow()) {
+        running = false;
+    }
+    collision->headFood();
 }
 
 void Game::update()
@@ -73,6 +77,7 @@ void Game::render()
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
     snake->render();
+    food->render();
     SDL_RenderPresent(renderer);
 }
 
